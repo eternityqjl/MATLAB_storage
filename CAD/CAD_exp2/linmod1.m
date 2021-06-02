@@ -1,0 +1,13 @@
+%%
+%将simulink模型线性化，得到状态空间模型
+[A,B,C,D]=linmod('lmod1');
+%将状态空间模型转换为传递函数
+[b,a]=ss2tf(A,B,C,D);
+%%
+%输出6个传递函数
+printsys(b(1,:),a)
+printsys(b(2,:),a)
+printsys(b(3,:),a)
+printsys(b(4,:),a)
+printsys(b(5,:),a)
+printsys(b(6,:),a)

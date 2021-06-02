@@ -1,0 +1,61 @@
+[System]
+Name='fuzzyPID'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=3
+NumRules=0
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='E'
+Range=[-3 3]
+NumMFs=10
+MF1='NB':'gaussmf',[1.062 -3]
+MF2='mf2':'trimf',[-2.5 0 2.5]
+MF3='mf3':'trimf',[0.5 3 5.5]
+MF4='mf4':'trimf',[-4 -3 -2]
+MF5='mf5':'trimf',[-3 -2 -1]
+MF6='mf6':'trimf',[-2 -1 0]
+MF7='mf7':'trimf',[-1 0 1]
+MF8='mf8':'trimf',[0 1 2]
+MF9='mf9':'trimf',[1 2 3]
+MF10='mf10':'trimf',[2 3 4]
+
+[Input2]
+Name='EC'
+Range=[-3 3]
+NumMFs=3
+MF1='mf1':'trimf',[-5.5 -3 -0.5]
+MF2='mf2':'trimf',[-2.5 0 2.5]
+MF3='mf3':'trimf',[0.5 3 5.5]
+
+[Output1]
+Name='KP'
+Range=[-5 5]
+NumMFs=3
+MF1='mf1':'trimf',[-9.167 -5 -0.8333]
+MF2='mf2':'trimf',[-4.167 0 4.167]
+MF3='mf3':'trimf',[0.8333 5 9.167]
+
+[Output2]
+Name='KI'
+Range=[-3 3]
+NumMFs=3
+MF1='mf1':'trimf',[-5.5 -3 -0.5]
+MF2='mf2':'trimf',[-2.5 0 2.5]
+MF3='mf3':'trimf',[0.5 3 5.5]
+
+[Output3]
+Name='KD'
+Range=[-3 3]
+NumMFs=3
+MF1='mf1':'trimf',[-5.5 -3 -0.5]
+MF2='mf2':'trimf',[-2.5 0 2.5]
+MF3='mf3':'trimf',[0.5 3 5.5]
+
+[Rules]
